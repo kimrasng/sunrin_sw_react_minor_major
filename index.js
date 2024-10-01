@@ -7,8 +7,6 @@
 
 // init()
 
-
-
 // const arr = [1,2,3,4]
 // const obj = {
 
@@ -24,7 +22,6 @@
 // 	console.log(key)
 // }
 
-
 // const arr = [1,2,3,4]
 // const obj = {
 //     a: 'apple',
@@ -39,9 +36,6 @@
 //     console.log(value)
 // }
 
-
-
-
 // async function getUserInfo(){
 //     return {name : "홍길동"}
 
@@ -49,17 +43,15 @@
 // const user = getUserInfo()
 // console.log(user)
 
+const getUserId = function () {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("1234"), 2000);
+  });
+};
 
-
-const getUserId = function(){
-    return new Promise((resolve, reject) => {
-        setTimeout(() => resolve("1234"), 2000)
-    })
+async function getUserInfo() {
+  const userId = await getUserId();
+  console.log(userId);
 }
 
-async function getUserInfo(){
-    const userId = await getUserId()
-    console.log(userId)
-}
-
-getUserInfo()
+getUserInfo();
